@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>兽皇-玄幻异兽图鉴与修真指南</title>
+    <meta name="description" content="兽皇网提供最全的玄幻异兽图鉴、修真兽类排行、神兽神话解析及御兽养成攻略。探索上古神兽、深渊魔物与天界灵兽的奥秘。">
+    <meta name="keywords" content="兽皇,玄幻异兽,神兽图鉴,修真指南,御兽,神话生物">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #1a1a2e;
+            --secondary-color: #16213e;
+            --accent-color: #e94560;
+            --gold-color: #ffd700;
+            --text-light: #e0e0e0;
+            --text-dim: #a0a0a0;
+            --card-bg: #0f3460;
+            --spacing-unit: 1rem;
+            --border-radius: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: rgba(26, 26, 46, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--gold-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: #fff;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            color: var(--text-light);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--gold-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--gold-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: 1px solid #444;
+            background: #222;
+            color: #fff;
+            outline: none;
+        }
+
+        .search-box button {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--gold-color);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(to bottom, rgba(26,26,46,0.3), var(--primary-color)), url('https://picsum.photos/seed/beastrealm/1600/900') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.8);
+            background: linear-gradient(45deg, #ffd700, #ff8c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            margin-bottom: 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 35px;
+            background-color: var(--accent-color);
+            color: #fff;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.2s, background-color 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: #ff2e4d;
+            transform: translateY(-2px);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #fff;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 24px;
+            background-color: var(--gold-color);
+            border-radius: 2px;
+        }
+
+        .view-more {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+        }
+
+        .view-more:hover {
+            text-decoration: underline;
+        }
+
+        /* Beast Grid */
+        .beast-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .beast-card {
+            background-color: var(--secondary-color);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .beast-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            border-color: var(--gold-color);
+        }
+
+        .beast-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #000;
+        }
+
+        .beast-info {
+            padding: 20px;
+        }
+
+        .beast-rank {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0,0,0,0.7);
+            color: var(--gold-color);
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: bold;
+            border: 1px solid var(--gold-color);
+        }
+
+        .beast-name {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .beast-type {
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .beast-stats {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            margin-bottom: 15px;
+        }
+
+        .stat-bar {
+            flex: 1;
+            height: 6px;
+            background: #333;
+            border-radius: 3px;
+            margin: 0 5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-fill {
+            height: 100%;
+            background: var(--gold-color);
+            border-radius: 3px;
+        }
+
+        .card-btn {
+            width: 100%;
+            padding: 10px;
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .card-btn:hover {
+            background: var(--gold-color);
+            color: #000;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--secondary-color);
+            padding: 60px 0;
+            margin-top: 40px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .feature-item {
+            padding: 20px;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--gold-color);
+        }
+
+        .feature-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .feature-desc {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+
+        /* Guide Section */
+        .guide-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .guide-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .guide-item {
+            display: flex;
+            gap: 20px;
+            background: var(--secondary-color);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            align-items: center;
+        }
+
+        .guide-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: rgba(255,255,255,0.1);
+            line-height: 1;
+        }
+
+        .guide-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .guide-content p {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+        }
+
+        .sidebar {
+            background: var(--secondary-color);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            height: fit-content;
+        }
+
+        .sidebar h3 {
+            margin-bottom: 20px;
+            color: #fff;
+            font-size: 1.2rem;
+            border-left: 3px solid var(--accent-color);
+            padding-left: 10px;
+        }
+
+        .sidebar-list li {
+            margin-bottom: 12px;
+        }
+
+        .sidebar-list a {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+
+        .sidebar-list a:hover {
+            color: var(--gold-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f1526;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+            border-top: 1px solid #333;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--gold-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: var(--text-dim);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+            }
+
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .guide-container {
+                grid-template-columns: 1fr;
+            }
+
+            .beast-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+                <span>兽皇</span>图鉴
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#rank">天榜排行</a></li>
+                    <li><a href="#types">种族分类</a></li>
+                    <li><a href="#guide">御兽指南</a></li>
+                    <li><a href="#myth">神话传说</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索神兽、属性、等级...">
+                <button type="button">🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>探索万界生灵，共铸兽皇之路</h1>
+            <p>汇集全球玄幻小说、修真世界中的顶级异兽。从混沌神兽到深渊魔物，为您解析每一位修真者的得力伙伴。</p>
+            <button class="cta-button" onclick="scrollToSection('rank')">开始探索图鉴</button>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <!-- 天榜排行 -->
+        <section id="rank" class="section">
+            <div class="section-header">
+                <h2 class="section-title">天榜异兽排行</h2>
+                <a href="#" class="view-more">查看完整榜单 &rarr;</a>
+            </div>
+            
+            <div class="beast-grid">
+                <!-- Card 1 -->
+                <article class="beast-card">
+                    <span class="beast-rank">1</span>
+                    <img src="https://picsum.photos/seed/dragon/400/300" alt="青龙" class="beast-image">
+                    <div class="beast-info">
+                        <h3 class="beast-name">青龙</h3>
+                        <span class="beast-type">东方·木属性·神兽</span>
+                        <div class="beast-stats">
+                            <span>力量</span>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 95%"></div></div>
+                            <span>速度</span>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 90%"></div></div>
+                        </div>
+                        <p style="font-size: 0.85rem; color: #aaa; margin-bottom: 10px;">四象之首，掌管东方生机，呼风唤雨，万兽臣服。</p>
+                        <button class="card-btn">查看详情</button>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="beast-card">
+                    <span class="beast-rank">2</span>
+                    <img src="https://picsum.photos/seed/phoenix/400/300" alt="朱雀" class="beast-image">
+                    <div class="beast-info">
+                        <h3 class="beast-name">朱雀</h3>
+                        <span class="beast-type">南方·火属性·不死鸟</span>
+                        <div class="beast-stats">
+                            <span>力量</span>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 85%"></div></div>
+                            <span>速度</span>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 98%"></div></div>
+                        </div>
+                        <p style="font-size: 0.85rem; color: #aaa; margin-bottom: 10px;">浴火重生，掌握极致火焰之力，是炼丹师的守护神。</p>
+                        <button class="card-btn">查看详情</button>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="beast-card">
+                    <span class="beast-rank">3</span>
+                    <img src="https://picsum.photos/seed/tiger/400/300" alt="白虎" class="beast-image">
+                    <div class="beast-info">
+                        <h3 class="beast-name">白虎</h3>
+                        <span class="beast-type">西方·金属性·杀伐</span>
+                        <div class="beast-stats">
+                            <span>力量</span>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 92%"></div></div>
+                            <span>速度</span>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 85%"></div></div>
+                        </div>
+                        <p style="font-size: 0.85rem; color: #aaa; margin-bottom: 10px;">主杀伐之威，身披金甲，所过之处万鬼退散。</p>
+                        <button class="card-btn">查看详情</button>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="beast-card">
+                    <span class="beast-rank">4</span>
+                    <img src="https://picsum.photos/seed/turtle/400/300" alt="玄武" class="beast-image">
+                    <div class="beast-info">
+                        <h3 class="beast-name">玄武</h3>
+                        <span class="beast-type">北方·水属性·防御</span>
+                        <div class="beast-stats">
+                            <span>力量</span>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 88%"></div></div>
+                            <span>速度</span>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 70%"></div></div>
+                        </div>
+                        <p style="font-size: 0.85rem; color: #aaa; margin-bottom: 10px;">镇守北方，龟蛇合体，防御力极强，可镇海。</p>
+                        <button class="card-btn">查看详情</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 种族分类 -->
+        <section id="types" class="section">
+            <div class="section-header">
+                <h2 class="section-title">种族分类</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🐉</div>
+                    <h3 class="feature-title">龙族</h3>
+                    <p class="feature-desc">掌控天地法则，力量与尊贵并存的霸主种族。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🦅</div>
+                    <h3 class="feature-title">凤族</h3>
+                    <p class="feature-desc">涅槃重生，火焰掌控者，象征希望与重生。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🐺</div>
+                    <h3 class="feature-title">妖族</h3>
+                    <p class="feature-desc">形形色色的灵兽与妖兽，拥有化形之能。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">👻</div>
+                    <h3 class="feature-title">鬼族</h3>
+                    <p class="feature-desc">来自幽冥的恐怖存在，擅长精神攻击与控制。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 御兽指南 -->
+        <section id="guide" class="guide-container">
+            <div class="guide-list">
+                <div class="section-header" style="margin-bottom: 20px;">
+                    <h2 class="section-title">御兽养成指南</h2>
+                </div>
+                
+                <div class="guide-item">
+                    <div class="guide-number">01</div>
+                    <div class="guide-content">
+                        <h3>如何选择契约兽</h3>
+                        <p>根据修炼功法选择相生属性的灵兽。例如修炼木系功法，优先选择青木类灵兽，可大幅提升修炼速度。</p>
+                    </div>
+                </div>
+
+                <div class="guide-item">
+                    <div class="guide-number">02</div>
+                    <div class="guide-content">
+                        <h3>灵石喂养与进阶</h3>
+                        <p>灵石是提升灵兽等级的必要资源。不同品质的灵石对应不同的进化路线，切勿盲目喂养，需查阅图鉴。</p>
+                    </div>
+                </div>
+
+                <div class="guide-item">
+                    <div class="guide-number">03</div>
+                    <div class="guide-content">
+                        <h3>血脉觉醒仪式</h3>
+                        <p>当灵兽达到一定等级，可举行血脉觉醒仪式。觉醒成功将解锁特殊技能或改变外形，大幅提升战斗力。</p>
+                    </div>
+                </div>
+
+                <div class="guide-item">
+                    <div class="guide-number">04</div>
+                    <div class="guide-content">
+                        <h3>兽皇令的奥秘</h3>
+                        <p>兽皇令是统领万兽的最高信物，持有者可号令低阶灵兽，但需付出巨大的精神力代价。</p>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="sidebar">
+                <h3>热门分类</h3>
+                <ul class="sidebar-list">
+                    <li><a href="#">上古神兽 <span>128</span></a></li>
+                    <li><a href="#">深渊魔物 <span>85</span></a></li>
+                    <li><a href="#">元素精灵 <span>64</span></a></li>
+                    <li><a href="#">星空巨兽 <span>42</span></a></li>
+                    <li><a href="#">虚空生物 <span>30</span></a></li>
+                </ul>
+
+                <h3 style="margin-top: 30px;">属性克制表</h3>
+                <div style="font-size: 0.9rem; color: #ccc; line-height: 2;">
+                    <p><span style="color: #4ade80;">木</span> 克 <span style="color: #f87171;">金</span></p>
+                    <p><span style="color: #f87171;">金</span> 克 <span style="color: #22d3ee;">水</span></p>
+                    <p><span style="color: #22d3ee;">水</span> 克 <span style="color: #facc15;">火</span></p>
+                    <p><span style="color: #facc15;">火</span> 克 <span style="color: #4ade80;">木</span></p>
+                </div>
+            </aside>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>关于兽皇</h4>
+                <p style="color: var(--text-dim); font-size: 0.9rem; line-height: 1.6;">
+                    兽皇网致力于打造最全的玄幻生物数据库。无论你是修真者、小说作者还是游戏玩家，这里都有你需要的知识。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>资源导航</h4>
+                <ul>
+                    <li><a href="#">玄幻小说</a></li>
+                    <li><a href="#">修真设定</a></li>
+                    <li><a href="#">游戏攻略</a></li>
+                    <li><a href="#">同人创作</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">登录 / 注册</a></li>
+                    <li><a href="#">投稿指南</a></li>
+                    <li><a href="#">联系站长</a></li>
+                    <li><a href="#">免责声明</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 兽皇图鉴 All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // 简单的交互：搜索框回车事件
+        const searchInput = document.querySelector('.search-box input');
+        const searchBtn = document.querySelector('.search-box button');
+
+        function handleSearch() {
+            if(searchInput.value.trim() !== "") {
+                alert("正在搜索：" + searchInput.value + "\n（演示页面，无实际后端）");
+            }
+        }
+
+        searchBtn.addEventListener('click', handleSearch);
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') handleSearch();
+        });
+
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.backgroundColor = 'rgba(26, 26, 46, 0.98)';
+                header.style.boxShadow = '0 4px 12px rgba(0,0,0,0.5)';
+            } else {
+                header.style.backgroundColor = 'rgba(26, 26, 46, 0.95)';
+                header.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)';
+            }
+        });
+    </script>
+</body>
+  </html>
