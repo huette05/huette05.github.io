@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动静乐团 - 古典与现代的听觉交响</title>
+    <meta name="description" content="动静乐团致力于融合古典乐器与当代电子音乐，打造沉浸式现场演出与高品质录音室作品。探索跨界音乐的魅力，获取最新巡演资讯与曲目单。">
+    <meta name="keywords" content="动静乐团, 跨界音乐, 古典电子, 现场演出, 音乐制作">
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --accent-color: #d4af37;
+            --text-color: #333;
+            --text-light: #666;
+            --bg-color: #f9f9f9;
+            --white: #ffffff;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 4px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-color);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://picsum.photos/seed/concert/1920/1080.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 70px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 5px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image img {
+            border-radius: 8px;
+            box-shadow: 20px 20px 0 var(--accent-color);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .section-subtitle {
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        /* Philosophy / Features */
+        .features {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            padding: 30px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-color);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .feature-card p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+        }
+
+        /* Upcoming Shows */
+        .shows {
+            background-color: var(--bg-color);
+        }
+
+        .show-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .show-item {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .show-item:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .show-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .show-meta {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            display: flex;
+            gap: 20px;
+        }
+
+        .show-location {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .show-date {
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        /* Discography */
+        .discography {
+            background-color: var(--white);
+        }
+
+        .album-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .album-card {
+            group: album;
+        }
+
+        .album-cover {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            aspect-ratio: 1/1;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+
+        .album-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .album-card:hover .album-cover img {
+            transform: scale(1.05);
+        }
+
+        .album-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .album-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: #888;
+            padding: 60px 0 20px;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-color);
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-wrapper nav {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .show-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .show-meta {
+                justify-content: center;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">DONGJING <span>ORCHESTRA</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#about">关于乐团</a></li>
+                    <li><a href="#philosophy">音乐理念</a></li>
+                    <li><a href="#shows">演出日程</a></li>
+                    <li><a href="#discography">专辑作品</a></li>
+                    <li><a href="#contact">联系合作</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">☰</div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>动静 · 交响</h1>
+                <p>当古老的弦乐奏响，遇见未来的电子脉冲。动静乐团为您呈现跨越时空的听觉盛宴。</p>
+                <div style="margin-top: 30px;">
+                    <a href="#shows" class="btn">查看演出</a>
+                    <a href="#discography" class="btn btn-outline" style="margin-left: 15px;">聆听作品</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about section-padding">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image">
+                        <img src="https://picsum.photos/seed/orchestra/600/400" alt="动静乐团排练场景">
+                    </div>
+                    <div class="about-text">
+                        <span class="section-subtitle">关于我们</span>
+                        <h2 class="section-title">重新定义古典乐团</h2>
+                        <p>动静乐团成立于2018年，是一支专注于古典音乐与电子音乐跨界融合的先锋团体。我们相信，音乐不应被流派所定义，而应被情感所驱动。</p>
+                        <p>乐团由一批来自国内外顶尖音乐学院的首席演奏家组成，同时配备了顶尖的电子音乐制作人。通过将合成器、采样器与传统管弦乐器相结合，我们创造出既熟悉又充满未来感的独特音色。</p>
+                        <p>无论是沉浸式的室内音乐会，还是大型场馆的视听演出，动静乐团都力求为观众带来前所未有的感官体验。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Philosophy Section -->
+        <section id="philosophy" class="features section-padding">
+            <div class="container">
+                <div class="text-center">
+                    <span class="section-subtitle" style="color: var(--accent-color);">核心概念</span>
+                    <h2 class="section-title">动静相生，虚实相映</h2>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎻</div>
+                        <h3>古典内核</h3>
+                        <p>坚守严谨的古典作曲技法与演奏标准，确保音乐结构的完整性与情感的深度。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>电子革新</h3>
+                        <p>引入实时电子音效与动态灯光系统，打破传统演出的时空限制，增强现场感染力。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌌</div>
+                        <h3>沉浸体验</h3>
+                        <p>打造“视听一体化”的艺术空间，让观众在光影与旋律的交织中迷失与回归。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upcoming Shows Section -->
+        <section id="shows" class="shows section-padding">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 50px;">
+                    <span class="section-subtitle">演出日程</span>
+                    <h2 class="section-title">近期巡演</h2>
+                </div>
+                <div class="show-list">
+                    <article class="show-item">
+                        <div class="show-info">
+                            <h3>赛博朋克：夜之城</h3>
+                            <div class="show-meta">
+                                <span class="show-date">2023.12.15</span>
+                                <span>📍 上海大剧院</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-outline">购票</a>
+                    </article>
+                    <article class="show-item">
+                        <div class="show-info">
+                            <h3>时空回响：巴赫变奏</h3>
+                            <div class="show-meta">
+                                <span class="show-date">2024.01.20</span>
+                                <span>📍 北京国家大剧院</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-outline">购票</a>
+                    </article>
+                    <article class="show-item">
+                        <div class="show-info">
+                            <h3>秋日颂歌：室内乐专场</h3>
+                            <div class="show-meta">
+                                <span class="show-date">2024.03.08</span>
+                                <span>📍 杭州大剧院</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-outline">购票</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Discography Section -->
+        <section id="discography" class="discography section-padding">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 50px;">
+                    <span class="section-subtitle">唱片发行</span>
+                    <h2 class="section-title">精选专辑</h2>
+                </div>
+                <div class="album-grid">
+                    <div class="album-card">
+                        <div class="album-cover">
+                            <img src="https://picsum.photos/seed/album1/300/300" alt="第一张专辑封面">
+                        </div>
+                        <div class="album-info">
+                            <h4>静默的回响</h4>
+                            <p>2022 / 独立发行</p>
+                        </div>
+                    </div>
+                    <div class="album-card">
+                        <div class="album-cover">
+                            <img src="https://picsum.photos/seed/album2/300/300" alt="第二张专辑封面">
+                        </div>
+                        <div class="album-info">
+                            <h4>动能方程</h4>
+                            <p>2023 / 柏林唱片</p>
+                        </div>
+                    </div>
+                    <div class="album-card">
+                        <div class="album-cover">
+                            <img src="https://picsum.photos/seed/album3/300/300" alt="EP封面">
+                        </div>
+                        <div class="album-info">
+                            <h4>午夜四重奏 EP</h4>
+                            <p>2023 / 数字单曲</p>
+                        </div>
+                    </div>
+                    <div class="album-card">
+                        <div class="album-cover">
+                            <img src="https://picsum.photos/seed/album4/300/300" alt="现场专辑封面">
+                        </div>
+                        <div class="album-info">
+                            <h4>Live in Shanghai</h4>
+                            <p>2023 / 沉浸式录音</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-padding" style="background-color: var(--white);">
+            <div class="container text-center">
+                <span class="section-subtitle">合作与联系</span>
+                <h2 class="section-title">欢迎洽谈演出与合作</h2>
+                <p style="max-width: 600px; margin: 0 auto 40px; color: var(--text-light);">
+                    我们接受各类商业演出、音乐节邀请及声音设计项目。请通过以下方式与我们取得联系。
+                </p>
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                    <a href="mailto:contact@dongjing-orchestra.com" class="btn">发送邮件</a>
+                    <a href="#" class="btn btn-outline">加入会员</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>动静乐团</h4>
+                    <p style="font-size: 0.85rem; line-height: 1.8;">
+                        用音乐连接过去与未来，用创新诠释古典精神。动静乐团，致力于构建华语地区最具影响力的跨界音乐品牌。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#about">关于乐团</a></li>
+                        <li><a href="#shows">演出购票</a></li>
+                        <li><a href="#discography">唱片商店</a></li>
+                        <li><a href="#contact">媒体资料</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <div class="social-links">
+                        <a href="#">WX</a>
+                        <a href="#">WB</a>
+                        <a href="#">IG</a>
+                        <a href="#">BILIBILI</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 动静乐团 Dongjing Orchestra. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+</html>
