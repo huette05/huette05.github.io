@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="稻壳阅读器官方下载中心提供安全、稳定、兼容性最好的稻壳阅读器客户端。支持EPUB、TXT、PDF等多种格式，内置海量正版书籍资源，提供极致阅读体验。">
+    <meta name="keywords" content="稻壳阅读器官方下载, 稻壳阅读器, 电子书阅读器, EPUB阅读软件, 免费电子书下载">
+    <title>稻壳阅读器官方下载-安全稳定的多格式电子书阅读与资源平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 顶部导航 */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-download-nav {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .btn-download-nav:hover {
+            background-color: #3a5a8a;
+            color: white;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #eef2f3 0%, #d9e4f5 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .download-actions {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 10px rgba(230, 126, 34, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(230, 126, 34, 0.5);
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: var(--secondary-color);
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: 2px solid #eee;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* 核心功能 */
+        .features {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background-color: #e3f2fd;
+            color: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* 软件特性与兼容性 */
+        .compatibility {
+            background-color: white;
+            padding: 60px 0;
+        }
+
+        .compat-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .compat-content h2 {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .compat-list li {
+            margin-bottom: 12px;
+            padding-left: 24px;
+            position: relative;
+            color: var(--text-light);
+        }
+
+        .compat-list li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .compat-image {
+            background-color: #f0f4f8;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .compat-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* 版本选择 */
+        .versions {
+            padding: 60px 0;
+        }
+
+        .version-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .version-table th, .version-table td {
+            padding: 16px 24px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .version-table th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .version-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .version-table tr:hover {
+            background-color: #fcfcfc;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .badge-windows {
+            background-color: #e3f2fd;
+            color: #1565c0;
+        }
+
+        .badge-mac {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .badge-android {
+            background-color: #fff3e0;
+            color: #ef6c00;
+        }
+
+        /* 常见问题 */
+        .faq {
+            background-color: white;
+            padding: 60px 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            margin-top: 12px;
+            color: var(--text-light);
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--secondary-color);
+            color: #b0bec5;
+            padding: 40px 0;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* 简化处理，移动端隐藏菜单 */
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .compat-grid {
+                grid-template-columns: 1fr;
+            }
+            .version-table th, .version-table td {
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                稻壳阅读器
+            </a>
+            <nav class="nav-links">
+                <a href="#features">功能特性</a>
+                <a href="#versions">版本下载</a>
+                <a href="#help">使用帮助</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+            <a href="#download" class="btn-download-nav">立即下载</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="download">
+            <div class="container">
+                <h1>稻壳阅读器官方下载</h1>
+                <p>一站式电子书阅读与管理解决方案。支持EPUB、PDF、TXT等主流格式，内置海量正版书籍，让阅读更自由、更高效。</p>
+                <div class="download-actions">
+                    <a href="#" class="btn-primary" onclick="alert('正在为您跳转至安全下载页面...')">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        下载 Windows 版
+                    </a>
+                    <a href="#" class="btn-secondary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                        下载 Mac 版
+                    </a>
+                </div>
+                <div style="margin-top: 24px; font-size: 0.9rem; color: #888;">
+                    <span>安全认证</span> &nbsp;•&nbsp; <span>无广告干扰</span> &nbsp;•&nbsp; <span>终身免费</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features" id="features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>为什么选择稻壳阅读器</h2>
+                    <p>专为深度阅读者打造的轻量级阅读软件</p>
+                </div>
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">📖</div>
+                        <h3>多格式完美支持</h3>
+                        <p>原生支持EPUB、EPUB3、TXT、PDF、MOBI等多种电子书格式，无需转换，即开即读。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🎨</div>
+                        <h3>极致阅读体验</h3>
+                        <p>提供多种翻页效果与阅读模式，支持自定义字体、背景、行距，保护视力更舒适。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">☁️</div>
+                        <h3>云端同步管理</h3>
+                        <p>支持多设备登录，自动同步阅读进度、书签与笔记，随时随地继续您的阅读旅程。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>正版书籍资源</h3>
+                        <p>内置正版图书库，涵盖文学、历史、科技等分类，支持在线搜索与订阅更新。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Compatibility Section -->
+        <section class="compatibility">
+            <div class="container">
+                <div class="compat-grid">
+                    <div class="compat-content">
+                        <h2>全平台兼容，随时随地阅读</h2>
+                        <p style="margin-bottom: 20px; color: #666;">无论您使用的是Windows电脑、macOS笔记本，还是Android手机，稻壳阅读器都能提供一致的优质阅读体验。</p>
+                        <ul class="compat-list">
+                            <li>支持 Windows 10 / Windows 11 系统</li>
+                            <li>完美适配 macOS 10.14 及以上版本</li>
+                            <li>支持 Android 5.0 及以上移动设备</li>
+                            <li>支持视网膜屏幕高清显示</li>
+                        </ul>
+                    </div>
+                    <div class="compat-image">
+                        <!-- 使用 Picsum 作为占位图，模拟软件界面 -->
+                        <img src="https://picsum.photos/seed/readerapp/600/350" alt="稻壳阅读器软件界面示意图" width="600" height="350">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Versions Section -->
+        <section class="versions" id="versions">
+            <div class="container">
+                <div class="section-title">
+                    <h2>版本下载中心</h2>
+                    <p>请根据您的设备系统选择对应的安装包</p>
+                </div>
+                <table class="version-table">
+                    <thead>
+                        <tr>
+                            <th>版本类型</th>
+                            <th>系统要求</th>
+                            <th>文件大小</th>
+                            <th>更新时间</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="badge badge-windows">Windows</span> 稳定版</td>
+                            <td>Win 10 / Win 11 (64位)</td>
+                            <td>45.2 MB</td>
+                            <td>2023-10-25</td>
+                            <td><a href="#" style="color: var(--primary-color); font-weight: 600;">立即下载</a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-mac">macOS</span> 稳定版</td>
+                            <td>macOS 10.14+</td>
+                            <td>52.8 MB</td>
+                            <td>2023-10-25</td>
+                            <td><a href="#" style="color: var(--primary-color); font-weight: 600;">立即下载</a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-android">Android</span> 安卓版</td>
+                            <td>Android 5.0+</td>
+                            <td>18.5 MB</td>
+                            <td>2023-09-15</td>
+                            <td><a href="#" style="color: var(--primary-color); font-weight: 600;">立即下载</a></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-windows">Windows</span> 开发版 (Beta)</td>
+                            <td>Win 11</td>
+                            <td>46.1 MB</td>
+                            <td>2023-11-01</td>
+                            <td><a href="#" style="color: var(--primary-color); font-weight: 600;">尝鲜下载</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq" id="faq">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题解答</h2>
+                    <p>关于稻壳阅读器下载与使用的相关问题</p>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">稻壳阅读器是免费的吗？ <span>+</span></div>
+                        <div class="faq-answer">是的，稻壳阅读器提供基础阅读功能永久免费，且不包含任何强制广告。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">下载的安装包安全吗？ <span>+</span></div>
+                        <div class="faq-answer">我们提供的所有安装包均经过官方安全扫描，您可以放心下载使用。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">支持导入Kindle格式的书籍吗？ <span>+</span></div>
+                        <div class="faq-answer">稻壳阅读器原生不支持MOBI格式，建议使用转换工具转换为EPUB后再导入阅读。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何解决安装失败的问题？ <span>+</span></div>
+                        <div class="faq-answer">请确保您的系统满足最低配置要求，并关闭其他正在运行的杀毒软件或下载工具。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于稻壳阅读器</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">致力于为用户提供最优质的电子书阅读体验，连接正版书籍与读者，打造纯净的数字阅读空间。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">官方公告</a></li>
+                        <li><a href="#">用户反馈</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">使用条款</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>客服邮箱: support@daokou.com</li>
+                        <li>商务合作: business@daokou.com</li>
+                        <li>工作时间: 9:00 - 18:00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 稻壳阅读器 版权所有. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ 交互逻辑
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+                
+                // 可选：关闭其他打开的项（手风琴效果）
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== parent) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
