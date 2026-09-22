@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电影毕业生-经典电影鉴赏与影史地位深度解析</title>
+    <meta name="description" content="电影毕业生专题页，深度解析1967年经典电影《毕业生》的创作背景、剧情梗概、主要演员及影史地位，提供观影指南与影评分析。">
+    <meta name="keywords" content="电影毕业生, 毕业生电影, 经典老电影, 1967年电影, 罗曼·波兰斯基, 达斯汀·霍夫曼">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --text-light: #666666;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0,0,0,0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('https://picsum.photos/seed/gradmovie/1920/1080.jpg') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #d35400;
+            transform: translateY(-2px);
+        }
+
+        /* Main Content Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+            margin-bottom: 60px;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 60px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -17px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        /* Movie Info & Synopsis */
+        .movie-info {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .info-item h4 {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .info-item p {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .synopsis h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .synopsis p {
+            text-align: justify;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        /* Cast Grid */
+        .cast-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .cast-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .cast-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .cast-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #ddd;
+        }
+
+        .cast-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .cast-name {
+            font-weight: 700;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .cast-role {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-widget {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .widget-title {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            color: var(--primary-color);
+        }
+
+        .timeline-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 15px;
+            border-left: 2px solid var(--accent-color);
+        }
+
+        .timeline-list li::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 6px;
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+        }
+
+        .timeline-list .year {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background-color: #f1f2f6;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: var(--text-color);
+        }
+
+        .tag:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            aspect-ratio: 16/9;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            font-size: 0.9rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 50px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .footer-col p {
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #bdc3c7;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #7f8c8d;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span>🎬</span> 电影毕业生
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#synopsis">剧情简介</a></li>
+                    <li><a href="#cast">主要演员</a></li>
+                    <li><a href="#gallery">剧照</a></li>
+                    <li><a href="#legacy">影史地位</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>1967年经典之作</h1>
+                <p>《毕业生》不仅是达斯汀·霍夫曼的成名作，更定义了整整一代人的青春迷茫与反叛。探讨成长、爱情与理想。</p>
+                <a href="#synopsis" class="btn">开始阅读</a>
+            </div>
+        </section>
+
+        <div class="container main-grid">
+            <!-- Left Column -->
+            <div class="content-column">
+                
+                <!-- Synopsis Section -->
+                <section id="synopsis">
+                    <div class="section-header">
+                        <h2 class="section-title">剧情简介</h2>
+                    </div>
+                    <article class="movie-info">
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <h4>导演</h4>
+                                <p>迈克·尼科尔斯</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>编剧</h4>
+                                <p>卡尔·科里尔</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>主演</h4>
+                                <p>达斯汀·霍夫曼 / 安·玛格丽特</p>
+                            </div>
+                            <div class="info-item">
+                                <h4>类型</h4>
+                                <p>剧情 / 爱情 / 喜剧</p>
+                            </div>
+                        </div>
+                        <div class="synopsis">
+                            <h3>故事梗概</h3>
+                            <p>本·布拉德利（达斯汀·霍夫曼 饰）是20世纪60年代美国加州的一名年轻毕业生。他刚刚从一所名牌大学毕业，对未来充满迷茫，不知道自己真正想要什么。在毕业派对上，他意外地爱上了自己父母的旧情人——伊莱恩·罗伯茨（安·玛格丽特 饰）。</p>
+                            <p>本·布拉德利不顾一切地追求伊莱恩，两人在短暂的甜蜜时光后步入婚姻殿堂。然而，婚礼当天，本发现了伊莱恩是罗伯茨夫妇的女儿，这一身份让本感到极度震惊和被背叛。他试图通过向伊莱恩的母亲（罗伯茨夫人）坦白来挽回局面，却反而导致了两人关系的彻底破裂。</p>
+                            <p>心灰意冷的本在大学好友的带领下，开始了疯狂的报复之旅。他利用自己对罗伯茨夫妇的信任，设下圈套，诱导罗伯茨先生去与一位名为洛拉·拉什的交际花约会。然而，随着情节的发展，本逐渐意识到自己的行为不仅没有让他感到快意，反而让他陷入了更深的空虚。影片最终以本在机场冲向伊莱恩，试图挽回这段感情作为结尾，留下了关于成长、选择与遗憾的深刻思考。</p>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- Cast Section -->
+                <section id="cast">
+                    <div class="section-header">
+                        <h2 class="section-title">主要演员</h2>
+                    </div>
+                    <div class="cast-grid">
+                        <div class="cast-card">
+                            <img src="https://picsum.photos/seed/hoffman/300/400.jpg" alt="达斯汀·霍夫曼" class="cast-img">
+                            <div class="cast-info">
+                                <span class="cast-name">达斯汀·霍夫曼</span>
+                                <span class="cast-role">饰 本·布拉德利</span>
+                            </div>
+                        </div>
+                        <div class="cast-card">
+                            <img src="https://picsum.photos/seed/annmargret/300/400.jpg" alt="安·玛格丽特" class="cast-img">
+                            <div class="cast-info">
+                                <span class="cast-name">安·玛格丽特</span>
+                                <span class="cast-role">饰 伊莱恩·罗伯茨</span>
+                            </div>
+                        </div>
+                        <div class="cast-card">
+                            <img src="https://picsum.photos/seed/katharine/300/400.jpg" alt="凯瑟琳·罗斯" class="cast-img">
+                            <div class="cast-info">
+                                <span class="cast-name">凯瑟琳·罗斯</span>
+                                <span class="cast-role">饰 罗伯茨夫人</span>
+                            </div>
+                        </div>
+                        <div class="cast-card">
+                            <img src="https://picsum.photos/seed/dan/300/400.jpg" alt="丹·艾克罗伊德" class="cast-img">
+                            <div class="cast-info">
+                                <span class="cast-name">丹·艾克罗伊德</span>
+                                <span class="cast-role">饰 比尔·古德诺</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Gallery Section -->
+                <section id="gallery">
+                    <div class="section-header">
+                        <h2 class="section-title">经典剧照</h2>
+                    </div>
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="https://picsum.photos/seed/grad1/400/225.jpg" alt="毕业舞会场景">
+                            <div class="gallery-caption">毕业舞会上的迷茫</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://picsum.photos/seed/grad2/400/225.jpg" alt="游泳池场景">
+                            <div class="gallery-caption">泳池边的浪漫邂逅</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://picsum.photos/seed/grad3/400/225.jpg" alt="机场追逐">
+                            <div class="gallery-caption">机场最后的追逐</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://picsum.photos/seed/grad4/400/225.jpg" alt="罗伯茨夫妇家">
+                            <div class="gallery-caption">罗伯茨夫妇家</div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Right Column Sidebar -->
+            <aside>
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">影史里程碑</h3>
+                    <ul class="timeline-list">
+                        <li>
+                            <span class="year">1967年</span>
+                            <p>电影上映，迅速成为反主流文化的标志性作品。</p>
+                        </li>
+                        <li>
+                            <span class="year">1968年</span>
+                            <p>获得第40届奥斯卡最佳导演、最佳改编剧本、最佳剪辑三项大奖。</p>
+                        </li>
+                        <li>
+                            <span class="year">1980年代</span>
+                            <p>被美国电影学会评为“百年百大电影”之一。</p>
+                        </li>
+                        <li>
+                            <span class="year">2000年</span>
+                            <p>被美国国会图书馆选入国家电影登记表，需永久保存。</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">相关标签</h3>
+                    <div class="tag-cloud">
+                        <a href="#" class="tag">青春电影</a>
+                        <a href="#" class="tag">美国经典</a>
+                        <a href="#" class="tag">反叛精神</a>
+                        <a href="#" class="tag">1960年代</a>
+                        <a href="#" class="tag">爱情片</a>
+                        <a href="#" class="tag">奥斯卡获奖</a>
+                    </div>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">推荐影评</h3>
+                    <ul class="timeline-list">
+                        <li>
+                            <a href="#">《毕业生》中的“塑料”隐喻与消费主义批判</a>
+                        </li>
+                        <li>
+                            <a href="#">达斯汀·霍夫曼：从无名小卒到奥斯卡影帝的逆袭</a>
+                        </li>
+                        <li>
+                            <a href="#">为什么我们依然需要看《毕业生》？</a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>🎬 电影毕业生</h3>
+                    <p>致力于提供最详尽、最客观的经典电影资料库。在这里重温光影艺术，探索电影背后的故事与情感。</p>
+                </div>
+                <div class="footer-col">
+                    <h3>快速导航</h3>
+                    <ul class="footer-links">
+                        <li><a href="#synopsis">剧情简介</a></li>
+                        <li><a href="#cast">主要演员</a></li>
+                        <li><a href="#gallery">剧照赏析</a></li>
+                        <li><a href="#legacy">影史地位</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>关于我们</h3>
+                    <p>本站为电影爱好者提供资料整理与分享服务，旨在弘扬经典影视文化。</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 电影毕业生专题页. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
