@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="搜同论坛 - 提供高质量的同志同好交流社区，涵盖热门话题讨论、生活分享、资源互助及情感交流，打造安全、温暖的线上聚集地。">
+    <meta name="keywords" content="搜同论坛,同志社区,同志交友,同志生活,同志讨论,同志资讯">
+    <title>搜同论坛 - 优质的同志同好交流社区与生活分享平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e91e63;
+            --primary-hover: #d81b60;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e0e0e0;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-main);
+            padding: 8px 0;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .user-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 10px rgba(233, 30, 99, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .search-box {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            background: white;
+            border-radius: 30px;
+            padding: 4px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            outline: none;
+            border-radius: 30px 0 0 30px;
+        }
+
+        .search-box button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* Main Content Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        /* Section Styles */
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section-title h2 {
+            font-size: 20px;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .section-title h2::before {
+            content: '';
+            position: absolute;
+            bottom: -14px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .more-link {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Forum Categories */
+        .category-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .category-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            border-color: transparent;
+        }
+
+        .cat-icon {
+            width: 48px;
+            height: 48px;
+            background-color: #fce4ec;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+        }
+
+        .category-card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .category-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            flex-grow: 1;
+        }
+
+        .cat-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #999;
+        }
+
+        /* Hot Topics List */
+        .topic-list {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .topic-item {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            transition: background 0.1s;
+        }
+
+        .topic-item:last-child {
+            border-bottom: none;
+        }
+
+        .topic-item:hover {
+            background-color: #fafafa;
+        }
+
+        .topic-vote {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 30px;
+        }
+
+        .vote-count {
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--primary-color);
+        }
+
+        .vote-label {
+            font-size: 10px;
+            color: #999;
+        }
+
+        .topic-content h4 {
+            font-size: 16px;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .topic-content h4:hover {
+            color: var(--primary-color);
+        }
+
+        .topic-info {
+            display: flex;
+            gap: 15px;
+            font-size: 12px;
+            color: #999;
+        }
+
+        .topic-tag {
+            background-color: #f3e5f5;
+            color: #8e24aa;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        .sidebar-widget h3 {
+            font-size: 16px;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .notice-list li {
+            font-size: 13px;
+            padding: 8px 0;
+            color: var(--text-secondary);
+            border-bottom: 1px dashed #eee;
+        }
+
+        .notice-list li:last-child {
+            border-bottom: none;
+        }
+
+        .notice-list li::before {
+            content: '•';
+            color: var(--primary-color);
+            margin-right: 6px;
+        }
+
+        .rank-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            font-size: 13px;
+        }
+
+        .rank-num {
+            width: 20px;
+            height: 20px;
+            background-color: #eee;
+            color: #666;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .rank-num.top-1 { background-color: #ffeb3b; color: #f57f17; }
+        .rank-num.top-2 { background-color: #ff9800; color: #fff; }
+        .rank-num.top-3 { background-color: #f44336; color: #fff; }
+
+        /* Footer */
+        footer {
+            background-color: #2c2c2c;
+            color: #ccc;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none; /* Simplified for mobile */
+            }
+
+            .header-inner {
+                justify-content: center;
+            }
+            
+            .user-actions {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                <span>搜同论坛</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#">首页</a>
+                <a href="#">热门话题</a>
+                <a href="#">交友专区</a>
+                <a href="#">生活分享</a>
+                <a href="#">资源互助</a>
+                <a href="#">情感树洞</a>
+            </nav>
+            <div class="user-actions">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">注册</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>发现同好，分享生活</h1>
+                <p>欢迎来到搜同论坛，这里是一个专注于同志群体的友好交流社区。无论你是想寻找志同道合的朋友，还是想分享生活中的点滴，这里都有属于你的空间。</p>
+                <div class="search-box">
+                    <input type="text" placeholder="搜索帖子、话题或用户...">
+                    <button>搜索</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="main-grid">
+                <!-- Left Column: Categories & Topics -->
+                <div class="content-area">
+                    
+                    <!-- Forum Categories -->
+                    <section class="section-block">
+                        <div class="section-title">
+                            <h2>热门版块</h2>
+                            <a href="#" class="more-link">查看全部 &rarr;</a>
+                        </div>
+                        <div class="category-list">
+                            <div class="category-card">
+                                <div class="cat-icon">💬</div>
+                                <h3>闲聊灌水</h3>
+                                <p>轻松愉快的日常交流，分享日常趣事，结识新朋友。</p>
+                                <div class="cat-meta">
+                                    <span>今日 2,304 帖</span>
+                                    <span>最后: 5分钟前</span>
+                                </div>
+                            </div>
+                            <div class="category-card">
+                                <div class="cat-icon">❤️</div>
+                                <h3>交友征友</h3>
+                                <p>真诚交友，寻找另一半。请遵守社区规则，友善交流。</p>
+                                <div class="cat-meta">
+                                    <span>今日 856 帖</span>
+                                    <span>最后: 2分钟前</span>
+                                </div>
+                            </div>
+                            <div class="category-card">
+                                <div class="cat-icon">📷</div>
+                                <h3>生活分享</h3>
+                                <p>展示你的生活美学，穿搭、旅行、美食，记录美好瞬间。</p>
+                                <div class="cat-meta">
+                                    <span>今日 1,120 帖</span>
+                                    <span>最后: 10分钟前</span>
+                                </div>
+                            </div>
+                            <div class="category-card">
+                                <div class="cat-icon">💡</div>
+                                <h3>互助问答</h3>
+                                <p>遇到问题？在这里提问，社区成员热心为你解答。</p>
+                                <div class="cat-meta">
+                                    <span>今日 320 帖</span>
+                                    <span>最后: 15分钟前</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Hot Topics -->
+                    <section class="section-block">
+                        <div class="section-title">
+                            <h2>最新讨论</h2>
+                            <a href="#" class="more-link">查看全部 &rarr;</a>
+                        </div>
+                        <div class="topic-list">
+                            <article class="topic-item">
+                                <div class="topic-vote">
+                                    <span class="vote-count">24</span>
+                                    <span class="vote-label">热</span>
+                                </div>
+                                <div class="topic-content">
+                                    <h4>大家平时周末都喜欢去哪里玩？求推荐！</h4>
+                                    <div class="topic-info">
+                                        <span class="topic-tag">闲聊</span>
+                                        <span>用户: 快乐小狗</span>
+                                        <span>2023-10-24</span>
+                                        <span>回复: 45</span>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="topic-item">
+                                <div class="topic-vote">
+                                    <span class="vote-count">18</span>
+                                </div>
+                                <div class="topic-content">
+                                    <h4>【交友】坐标上海，真诚找同城搭子看电影</h4>
+                                    <div class="topic-info">
+                                        <span class="topic-tag">交友</span>
+                                        <span>用户: 独行侠</span>
+                                        <span>2023-10-24</span>
+                                        <span>回复: 12</span>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="topic-item">
+                                <div class="topic-vote">
+                                    <span class="vote-count">15</span>
+                                </div>
+                                <div class="topic-content">
+                                    <h4>关于同志群体在职场中保持低调的建议</h4>
+                                    <div class="topic-info">
+                                        <span class="topic-tag">职场</span>
+                                        <span>用户: 职场老司机</span>
+                                        <span>2023-10-24</span>
+                                        <span>回复: 38</span>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="topic-item">
+                                <div class="topic-vote">
+                                    <span class="vote-count">9</span>
+                                </div>
+                                <div class="topic-content">
+                                    <h4>分享一套最近很喜欢的穿搭，求点评</h4>
+                                    <div class="topic-info">
+                                        <span class="topic-tag">生活</span>
+                                        <span>用户: 潮流达人</span>
+                                        <span>2023-10-23</span>
+                                        <span>回复: 21</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Right Column: Sidebar -->
+                <aside class="sidebar">
+                    <!-- User Login Widget -->
+                    <div class="sidebar-widget">
+                        <h3>欢迎来到搜同论坛</h3>
+                        <p style="font-size: 13px; color: #666; margin-bottom: 15px;">登录后可以发帖、评论、点赞，并查看更多私密内容。</p>
+                        <button class="btn btn-primary" style="width: 100%;">立即登录 / 注册</button>
+                    </div>
+
+                    <!-- Notice Widget -->
+                    <div class="sidebar-widget">
+                        <h3>社区公告</h3>
+                        <ul class="notice-list">
+                            <li>关于规范发帖内容的通知</li>
+                            <li>新版论坛规则已更新，请查阅</li>
+                            <li>严厉打击网络诈骗，保护个人隐私</li>
+                            <li>周末线下聚会活动报名开启</li>
+                        </ul>
+                    </div>
+
+                    <!-- Hot Users Widget -->
+                    <div class="sidebar-widget">
+                        <h3>活跃用户榜</h3>
+                        <ul class="rank-list">
+                            <li>
+                                <span class="rank-num top-1">1</span>
+                                <a href="#">阳光男孩</a>
+                            </li>
+                            <li>
+                                <span class="rank-num top-2">2</span>
+                                <a href="#">深夜食堂</a>
+                            </li>
+                            <li>
+                                <span class="rank-num top-3">3</span>
+                                <a href="#">旅行家</a>
+                            </li>
+                            <li>
+                                <span class="rank-num">4</span>
+                                <a href="#">摄影师</a>
+                            </li>
+                            <li>
+                                <span class="rank-num">5</span>
+                                <a href="#">美食家</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Banner Placeholder -->
+                    <div class="sidebar-widget" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; padding: 30px 20px;">
+                        <h3 style="color: white; margin-bottom: 10px;">加入VIP会员</h3>
+                        <p style="font-size: 12px; margin-bottom: 20px; opacity: 0.9;">解锁更多专属功能和特权</p>
+                        <button class="btn" style="background: white; color: #667eea; width: 100%;">查看详情</button>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>搜同论坛</h4>
+                    <p style="font-size: 13px; line-height: 1.8; color: #999;">
+                        我们致力于为同志群体提供一个安全、开放、友好的交流环境。在这里，你可以自由表达，结交朋友，分享生活。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">社区公约</a></li>
+                        <li><a href="#">用户隐私</a></li>
+                        <li><a href="#">联系管理员</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>热门版块</h4>
+                    <ul>
+                        <li><a href="#">闲聊灌水</a></li>
+                        <li><a href="#">交友征友</a></li>
+                        <li><a href="#">生活分享</a></li>
+                        <li><a href="#">情感树洞</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 搜同论坛. All Rights Reserved. 本站仅供交流与分享，请遵守相关法律法规。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                                          </html>
